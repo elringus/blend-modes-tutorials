@@ -19,7 +19,7 @@ public class GlassMeshExtension : MeshRendererExtension
     }
     public override List<string> GetSupportedShaderFamilies ()
     {
-        var families = base.GetSupportedShaderFamilies().ToList();
+        var families = base.GetSupportedShaderFamilies();
         families.Add("GlassDistortion");
         return families;
     }
