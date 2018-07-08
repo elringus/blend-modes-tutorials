@@ -1,26 +1,21 @@
 ﻿using BlendModes;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 [ExtendedComponent(typeof(MeshRenderer))]
 public class GlassMeshExtension : MeshRendererExtension
 {
-    public override List<ShaderProperty> DefaultShaderProperties
+    public override ShaderProperty[] GetDefaultShaderProperties ()
     {
-        get
-        {
-            return new List<ShaderProperty> {
-                    new ShaderProperty("_MainTex", ShaderPropertyType.Texture, Texture2D.whiteTexture),
-                    new ShaderProperty("_DistortionTex", ShaderPropertyType.Texture, Texture2D.whiteTexture),
-                    new ShaderProperty("_Distortion", ShaderPropertyType.Float, 10)
-                };
-        }
+        return base.GetDefaultShaderProperties().Concat(new[] {
+            new ShaderProperty("_DistortionTex", ShaderPropertyType.Texture, Texture2D.whiteTexture),
+            new ShaderProperty("_Distortion", ShaderPropertyType.Float, 10)
+        }).ToArray();
     }
-    public override List<string> GetSupportedShaderFamilies ()
+
+    public override string[] GetSupportedShaderFamilies ()
     {
-        var families = base.GetSupportedShaderFamilies();
-        families.Add("GlassDistortion");
-        return families;
+        return base.GetSupportedShaderFamilies()
+            .Concat(new[] { "GlassDistortion" }).ToArray();
     }
 }
