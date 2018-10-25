@@ -28,7 +28,7 @@
             
             #include "UnityCG.cginc"
             // Include blend modes shader APIs.
-            #include "BlendModesCG.cginc"
+            #include "Assets/BlendModes/Shaders/BlendModesCG.cginc"
 
             struct appdata
             {

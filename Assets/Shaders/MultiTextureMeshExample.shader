@@ -24,7 +24,7 @@
             #pragma fragment frag
             
             #include "UnityCG.cginc"
-            #include "BlendModesCG.cginc"
+            #include "Assets/BlendModes/Shaders/BlendModesCG.cginc"
 
             struct appdata
             {
