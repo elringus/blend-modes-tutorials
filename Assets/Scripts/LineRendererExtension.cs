@@ -20,14 +20,14 @@ public class LineRendererExtension : ComponentExtension
         };
     }
 
-    public override Material[] GetRenderMaterials ()
+    public override Material GetRenderMaterial ()
     {
-        return GetExtendedComponent<LineRenderer>().sharedMaterials;
+        return GetExtendedComponent<LineRenderer>().sharedMaterial;
     }
 
-    public override void SetRenderMaterials (Material[] materials)
+    public override void SetRenderMaterial (Material material)
     {
-        GetExtendedComponent<LineRenderer>().sharedMaterials = materials;
+        GetExtendedComponent<LineRenderer>().sharedMaterial = material;
     }
 
     public override void OnEffectDisabled ()
