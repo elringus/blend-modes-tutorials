@@ -33,6 +33,6 @@ public class LineRendererExtension : ComponentExtension
     public override void OnEffectDisabled ()
     {
         if (!IsExtendedComponentValid) return;
-        GetExtendedComponent<LineRenderer>().sharedMaterials = new[] { new Material(Shader.Find("Particles/Additive")) };
+        GetExtendedComponent<LineRenderer>().sharedMaterials = new[] { new Material(Shader.Find("Particles/Standard Unlit")) };
     }
 }
